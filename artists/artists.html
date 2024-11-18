@@ -1,0 +1,65 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Artists</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Artists</h1>
+            <a href="/artists/add" class="button">Add New Artist</a>
+
+            <div>
+                <label>Filter by Country:</label>
+                <a href="{{ url_for('artists') }}">All</a>
+                <a href="{{ url_for('artists', country='UK') }}">UK</a>
+                <a href="{{ url_for('artists', country='USA') }}">USA</a>
+                <a href="{{ url_for('artists', country='BRA') }}">BRA</a>
+                <a href="{{ url_for('artists', country='RUS') }}">RUS</a>
+                <a href="{{ url_for('artists', country='SPA') }}">SPA</a>
+                <a href="{{ url_for('artists', country='EU') }}">EU</a>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Artist</th>
+                    <th>Nickname</th>
+                    <th>Year<br>Born</th>
+                    <th>Potential</th>
+                    <th>Favourite<br>Songs</th>
+                    <th>Best Album</th>
+                    <th>Vibe</th>
+                    <th>Annoyance</th>
+                    <th>Streams<br>/Month</th>
+                    <th class="overall">
+                        Overall
+                        <a href="{{ url_for('artists', sort='asc' if sort_by_overall == 'desc' else 'desc') }}" style="font-size: 14px; color: #888;">🔽</a>
+                    </th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+                {% for artist_info in artists_with_methods %}
+                <tr>
+                    <td><a href="{{ url_for('artist_details', id=artist_info.artist.id) }}">{{ artist_info.artist.artist }}</a></td>
+                    <td>{{ artist_info.artist.nickname }}</td>
+                    <td>{{ artist_info.artist.year_was_born }}</td>
+                    <td>{{ artist_info.artist.potential }}</td>
+                    <td>{{ artist_info.artist.favourite_songs }}</td>
+                    <td>{{ artist_info.artist.best_album }}</td>
+                    <td>{{ artist_info.artist.vibe }}</td>
+                    <td>{{ artist_info.artist.annoyance }}</td>
+                    <td>{{ artist_info.artist.streams_per_month }}</td>
+                    <td class="overall">{{ artist_info.artist.overall }}</td>
+                    <td>{{ artist_info.artist.country }}</td>
+                    <td>
+                        <a href="/artists/edit/{{ artist_info.artist.id }}" class="button-small">Edit</a>
+                        <a href="/artists/delete/{{ artist_info.artist.id }}" class="button-small delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <a href="/" class="button">Back to Home</a>
+        </div>
+    </body>
+    </html>
