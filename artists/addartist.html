@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Artist</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Artist</h1>
+        <form method="post">
+            <label>Artist:</label>
+            <input type="text" name="artist" required>
+            <label>Nickname:</label>
+            <input type="text" name="nickname" required>
+            <label>Year Born:</label>
+            <input type="number" name="year_was_born" required>
+            <label>Potential:</label>
+            <input type="number" name="potential" step="0.1" required>
+            <label>Favourite Songs:</label>
+            <input type="text" name="favourite_songs" required>
+            <label>Best Album:</label>
+            <input type="text" name="best_album" required>
+            <label>Vibe:</label>
+            <input type="number" name="vibe" step="0.1" required>
+            <label>Annoyance:</label>
+            <input type="number" name="annoyance" step="0.1" required>
+            <label>Streams/Month:</label>
+            <input type="number" name="streams_per_month" step="0.1" required>
+            <label>Overall:</label>
+            <input type="number" name="overall" step="0.1" required>
+            <label>Country</label>
+            <input type="text" name="country" required>
+            <input type="submit" value="Add Artist" class="button">
+        </form>
+        <a href="/artists" class="button">Back to Artists</a>
+    </div>
+</body>
+</html>
