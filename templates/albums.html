@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Albums</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Albums</h1>
+        <a href="/albums/add" class="button">Add New Album</a>
+        <div>
+            <label>Filter by Country:</label>
+            <a href="{{ url_for('albums') }}">All</a>
+            <a href="{{ url_for('albums', country='UK') }}">UK</a>
+            <a href="{{ url_for('albums', country='USA') }}">USA</a>
+            <a href="{{ url_for('albums', country='BRA') }}">BRA</a>
+            <a href="{{ url_for('albums', country='RUS') }}">RUS</a>
+            <a href="{{ url_for('albums', country='SPA') }}">SPA</a>
+            <a href="{{ url_for('albums', country='EU') }}">EU</a>
+        </div>
+        <table>
+            <tr>
+                <th>Album Name</th>
+                <th>Tracks Num</th>
+                <th>Date</th>
+                <th>Likes Percent (%)</th>
+                <th>Best Songs</th>
+                <th>Views (Genius, in m)</th>
+                <th>Styles</th>
+                <th>Wanna Relisten (of 10)</th>
+                <th class="overall">
+                    Overall
+                    <a href="{{ url_for('albums', sort='asc' if sort_by_overall == 'desc' else 'desc') }}" style="font-size: 14px; color: #888;">🔽</a>
+                </th>
+                <th>Country</th>
+                <th>Actions</th>
+            </tr>
+            {% for album in albums %}
+            <tr>
+                <td><a href="{{ url_for('album_details', id=album.id) }}">{{ album.album_title }}</a></td>
+                <td>{{ album.tracks_num }}</td>
+                <td>{{ album.release_date }}</td>
+                <td>{{ album.likes_percent }}</td>
+                <td>{{ album.best_songs }}</td>
+                <td>{{ album.views_genius }}</td>
+                <td>{{ album.styles }}</td>
+                <td>{{ album.wanna_relisten }}</td>
+                <td class="overall">{{ album.overall }}</td>
+                <td>{{ album.country }}</td>
+                <td>
+                    <a href="/albums/edit/{{ album.id }}" class="button-small">Edit</a>
+                    <a href="/albums/delete/{{ album.id }}" class="button-small delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>

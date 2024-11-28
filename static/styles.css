@@ -1,0 +1,221 @@
+/* Основные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/images/macoss.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #E0E0E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20vh;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Темный полупрозрачный фон для контрастности */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #FFF;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 0 0 20px; /* Добавлен отступ снизу */
+    color: #FFFFFF;
+}
+
+p {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+/* Кнопки */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+.button-small {
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+.button-small.delete {
+    color: #FFFFFF;
+    border-color: #e74c3c;
+}
+
+.button-small.delete:hover {
+    background-color: #e74c3c;
+    color: #FFFFFF;
+}
+
+/* Для таблиц */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0; /* Увеличен отступ таблиц */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+    color: #333;
+}
+
+th {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(240, 240, 240, 0.8);
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(240, 240, 240, 0.8); /* Светлый фон для четных строк */
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.8); /* Контрастный фон для нечетных строк */
+}
+
+td {
+    word-wrap: break-word;
+    font-weight: 500;
+}
+
+/* Стиль для значения Overall */
+td.overall {
+    font-weight: bold;
+    color: #d9534f; /* Красный цвет */
+}
+
+th.overall {
+    color: #d9534f;
+}
+
+/* Кнопка добавления */
+.container .button {
+    margin: 20px 0; /* Добавлены отступы сверху и снизу */
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.container .button:hover {
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+/* Фильтры */
+.filter-container {
+    margin: 30px 0; /* Увеличен отступ для фильтров */
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.filter-container a {
+    margin-right: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.filter-container a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+/* Формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+
+input[type="submit"] {
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Ссылки */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Увеличиваем ширину контейнера на маленьких экранах */
+    }
+
+    table th, table td {
+        font-size: 12px; /* Уменьшаем размер шрифта для компактности */
+    }
+}

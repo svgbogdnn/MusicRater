@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Artist</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Artist</h1>
+        <form method="post">
+            <label>Artist:</label>
+            <input type="text" name="artist" value="{{ artist.artist }}" required>
+            <label>Nickname:</label>
+            <input type="text" name="nickname" value="{{ artist.nickname }}" required>
+            <label>Year Born:</label>
+            <input type="number" name="year_was_born" value="{{ artist.year_was_born }}" required>
+            <label>Potential:</label>
+            <input type="number" name="potential" step="0.1" value="{{ artist.potential }}" required>
+            <label>Favourite Songs:</label>
+            <input type="text" name="favourite_songs" value="{{ artist.favourite_songs }}" required>
+            <label>Best Album:</label>
+            <input type="text" name="best_album" value="{{ artist.best_album }}" required>
+            <label>Vibe:</label>
+            <input type="number" name="vibe" step="0.1" value="{{ artist.vibe }}" required>
+            <label>Annoyance:</label>
+            <input type="number" name="annoyance" step="0.1" value="{{ artist.annoyance }}" required>
+            <label>Streams/Month:</label>
+            <input type="number" name="streams_per_month" step="0.1" value="{{ artist.streams_per_month }}" required>
+            <label>Overall:</label>
+            <input type="number" name="overall" step="0.1" value="{{ artist.overall }}" required>
+            <label>Country</label>
+            <input type="text" name="country" value="{{ artist.country }}" required>
+            <input type="submit" value="Save Changes" class="button">
+        </form>
+        <a href="/artists" class="button">Back to Artists</a>
+    </div>
+</body>
+</html>

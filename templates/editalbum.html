@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Album</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Album</h1>
+        <form method="post">
+            <label>Album Title:</label>
+            <input type="text" name="album_title" value="{{ album.album_title }}" required>
+            <label>Tracks Num:</label>
+            <input type="number" name="tracks_num" value="{{ album.tracks_num }}" step="1" required>
+            <label>Release Date:</label>
+            <input type="text" name="release_date" value="{{ album.release_date }}" required>
+            <label>Likes Percent (%):</label>
+            <input type="number" name="likes_percent" value="{{ album.likes_percent }}" step="0.1" required>
+            <label>Best Songs:</label>
+            <input type="text" name="best_songs" value="{{ album.best_songs }}" required>
+            <label>Views on Genius (in m):</label>
+            <input type="number" name="views_genius" value="{{ album.views_genius }}" step="0.1" required>
+            <label>Styles:</label>
+            <input type="text" name="styles" value="{{ album.styles }}" required>
+            <label>Wanna Relisten (out of 10):</label>
+            <input type="number" name="wanna_relisten" value="{{ album.wanna_relisten }}" step="0.1" required>
+            <label>Overall (out of 10):</label>
+            <input type="number" name="overall" value="{{ album.overall }}" step="0.1" required>
+            <label>Country:</label>
+            <input type="text" name="country" value="{{ album.country }}" required>
+            <input type="submit" value="Save Changes" class="button">
+        </form>
+        <a href="/albums" class="button">Back to Albums</a>
+    </div>
+</body>
+</html>

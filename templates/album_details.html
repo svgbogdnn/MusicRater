@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ album.album_title }} - Details</h1>
+        <p><strong>Tracks Number:</strong> {{ album.tracks_num }}</p>
+        <p><strong>Release Date:</strong> {{ album.release_date }}</p>
+        <p><strong>Likes Percent:</strong> {{ album.likes_percent }}%</p>
+        <p><strong>Best Songs:</strong> {{ album.best_songs }}</p>
+        <p><strong>Styles:</strong> {{ album.styles }}</p>
+        <p><strong>Views on Genius (in m):</strong> {{ album.views_genius }}</p>
+        <p><strong>Wanna Relisten:</strong> {{ album.wanna_relisten }}</p>
+        <p><strong>Country:</strong> {{ album.country }}</p>
+        <p><strong>Overall:</strong> {{ album.overall }}</p>
+
+        <h2>Album Rating</h2>
+        <p>{{ album_info.rating }}</p>
+
+        <h2>Recommended Similar Albums</h2>
+        <ul>
+            {% for similar_album in album_info.similar_albums %}
+                <li>{{ similar_album }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Popular Tracks</h2>
+        <ul>
+            {% for track in album_info.top_tracks %}
+                <li>{{ track }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/albums" class="button">Back to Albums</a>
+    </div>
+</body>
+</html>

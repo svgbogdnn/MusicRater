@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Song</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Song</h1>
+        <form method="post">
+            <label>Song (Title):</label>
+            <input type="text" name="title" value="{{ song.title }}" required>
+            <label>Artist:</label>
+            <input type="text" name="artist" value="{{ song.artist }}" required>
+            <label>Album:</label>
+            <input type="text" name="album" value="{{ song.album }}">
+            <label>Date (DD.MM.YYYY):</label>
+            <input type="text" name="date" value="{{ song.date }}">
+            <label>Streams:</label>
+            <input type="number" name="streams" step="0.01" value="{{ song.streams }}" required>
+            <label>Vibe:</label>
+            <input type="number" name="vibe" step="0.01" value="{{ song.vibe }}" required>
+            <label>Beat:</label>
+            <input type="number" name="beat" step="0.01" value="{{ song.beat }}" required>
+            <label>Flow:</label>
+            <input type="number" name="flow" step="0.01" value="{{ song.flow }}" required>
+            <label>Re-Listening:</label>
+            <input type="number" name="re_listening" step="0.01" value="{{ song.re_listening }}" required>
+            <label>Energy:</label>
+            <input type="number" name="energy" step="0.01" value="{{ song.energy }}" required>
+            <label>Overall:</label>
+            <input type="number" name="overall" step="0.01" value="{{ song.overall }}" required>
+            <label>Country</label>
+            <input type="text" name="country" value="{{ song.country }}" required>
+            <input type="submit" value="Save Changes" class="button">
+        </form>
+        <a href="/songs" class="button">Back to Songs</a>
+    </div>
+</body>
+</html>

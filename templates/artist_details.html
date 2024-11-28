@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artist Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ artist.artist }} ({{ artist.nickname }})</h1>
+
+        <h2>Details</h2>
+        <ul>
+            <li><strong>Country:</strong> {{ artist.country }}</li>
+            <li><strong>Year Born:</strong> {{ artist.year_was_born }}</li>
+            <li><strong>Streams per Month:</strong> {{ artist.streams_per_month }}</li>
+            <li><strong>Popularity Status:</strong> {{ artist_info.popularity_status }}</li>
+        </ul>
+
+        <h2>Top 5 Songs</h2>
+        <ul>
+            {% for song in artist_info.top_songs %}
+                <li>{{ song }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Similar Artists</h2>
+        <ul>
+            {% for similar_artist in artist_info.similar_artists %}
+                <li>{{ similar_artist }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('artists') }}" class="button">Back to Artists</a>
+    </div>
+</body>
+</html>

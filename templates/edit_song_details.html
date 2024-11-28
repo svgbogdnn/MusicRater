@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Song Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ song.title }} - Details</h1>
+        <form method="post">
+            <label>Duration (in minutes):</label>
+            <input type="number" name="duration_minutes" value="{{ song.duration_minutes }}" step="0.1" required>
+
+            <label>Is this a hit?</label>
+            <input type="checkbox" name="is_hit" {% if song.is_hit %}checked{% endif %}>
+
+            <label>Main Information:</label>
+            <textarea name="main_info" rows="5" required>{{ song.main_info }}</textarea>
+
+            <input type="submit" value="Save Changes" class="button">
+        </form>
+        <a href="/songs" class="button">Back to Songs</a>
+    </div>
+</body>
+</html>

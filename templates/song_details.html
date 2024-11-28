@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ song.title }} - Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ song.title }} - Details</h1>
+
+        <table>
+            <tr><th>Title</th><td>{{ song.title }}</td></tr>
+            <tr><th>Artist</th><td>{{ song.artist }}</td></tr>
+            <tr><th>Album</th><td>{{ song.album }}</td></tr>
+            <tr><th>Date</th><td>{{ song.date }}</td></tr>
+            <tr><th>Streams</th><td>{{ song.streams }}</td></tr>
+            <tr><th>Vibe</th><td>{{ song.vibe }}</td></tr>
+            <tr><th>Beat</th><td>{{ song.beat }}</td></tr>
+            <tr><th>Flow</th><td>{{ song.flow }}</td></tr>
+            <tr><th>Re-Listening</th><td>{{ song.re_listening }}</td></tr>
+            <tr><th>Energy</th><td>{{ song.energy }}</td></tr>
+            <tr><th>Overall</th><td>{{ song.overall }}</td></tr>
+            <tr><th>Country</th><td>{{ song.country }}</td></tr>
+            <tr><th>Summary</th><td>{{ song_info.summary }}</td></tr>
+            <tr><th>Total Play Time</th><td>{{ song_info.total_play_time }} minutes</td></tr>
+            <tr><th>Hit Status</th><td>{{ "Hit" if song_info.is_hit else "No Hit" }}</td></tr>
+        </table>
+
+        <a href="/songs" class="button">Back to Songs</a>
+    </div>
+</body>
+</html>
