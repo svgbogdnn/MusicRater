@@ -6,9 +6,6 @@ is a web application developed on the Flask web framework, which was used to cre
 
 ---
 
-
-# MusicRater
-
 Инструкция по развертыванию проекта с GitHub на локальном устройстве.
 
 ---
